@@ -1,4 +1,18 @@
+import { useFormContext } from "@/utility/FormContext";
+import BackButton from "./BackButton";
+import ConfirmButton from "./ConfirmButton";
+
 function SummaryStep() {
+  const { setStep } = useFormContext();
+
+  const handleNextStep = () => {
+    setStep(5);
+  };
+
+  const handlePreviousStep = () => {
+    setStep(3);
+  };
+
   return (
     <div>
       <ul>
@@ -26,6 +40,8 @@ function SummaryStep() {
         <p>+$12/mo</p>
         <p>+$120/mo</p>
       </span>
+      <BackButton handler={handlePreviousStep} />
+      <ConfirmButton handler={handleNextStep} text="Next Step" />
     </div>
   );
 }

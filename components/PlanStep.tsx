@@ -1,4 +1,18 @@
+import { useFormContext } from "@/utility/FormContext";
+import BackButton from "./BackButton";
+import ConfirmButton from "./ConfirmButton";
+
 function PlanStep() {
+  const { setStep } = useFormContext();
+
+  const handleNextStep = () => {
+    setStep(3);
+  };
+
+  const handlePreviousStep = () => {
+    setStep(1);
+  };
+
   return (
     <div>
       <ul>
@@ -24,7 +38,8 @@ function PlanStep() {
           <p>2 months free</p>
         </li>
       </ul>
-      <button>Monthly Yearly</button>
+      <BackButton handler={handlePreviousStep} />
+      <ConfirmButton handler={handleNextStep} text="Next Step" />
     </div>
   );
 }

@@ -1,9 +1,14 @@
 import { useFormContext } from "@/utility/FormContext";
+import ConfirmButton from "./ConfirmButton";
 import SubTitle from "./SubTitle";
 import Title from "./Title";
 
 function InfoStep() {
-  const { personalInfo, setPersonalInfo } = useFormContext();
+  const { personalInfo, setPersonalInfo, step, setStep } = useFormContext();
+
+  const handleNextStep = () => {
+    setStep(2);
+  };
 
   return (
     <form>
@@ -42,6 +47,7 @@ function InfoStep() {
         }
         required
       />
+      <ConfirmButton handler={handleNextStep} text="Next Step" />
     </form>
   );
 }
