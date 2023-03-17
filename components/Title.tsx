@@ -1,4 +1,9 @@
-function Title() {
-  return <h2>Title</h2>;
+interface Props {
+  title: string;
 }
+
+function Title({ title }: Props) {
+  return <h2>{title}</h2>;
+}
+
 export default Title;

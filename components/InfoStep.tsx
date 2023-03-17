@@ -1,10 +1,14 @@
 import { useFormContext } from "@/utility/FormContext";
+import SubTitle from "./SubTitle";
+import Title from "./Title";
 
 function InfoStep() {
   const { personalInfo, setPersonalInfo } = useFormContext();
 
   return (
     <form>
+      <Title title="Personal Info" />
+      <SubTitle subTitle="Please provide your name, email address, and phone number" />
       <label htmlFor="name">Name</label>
       <input
         type="text"
@@ -14,6 +18,7 @@ function InfoStep() {
         onChange={(e) =>
           setPersonalInfo({ ...personalInfo, name: e.target.value })
         }
+        required
       />
       <label htmlFor="email">Email Address</label>
       <input
@@ -24,6 +29,7 @@ function InfoStep() {
         onChange={(e) =>
           setPersonalInfo({ ...personalInfo, email: e.target.value })
         }
+        required
       />
       <label htmlFor="phone">Phone Number</label>
       <input
@@ -34,6 +40,7 @@ function InfoStep() {
         onChange={(e) =>
           setPersonalInfo({ ...personalInfo, phone: e.target.value })
         }
+        required
       />
     </form>
   );

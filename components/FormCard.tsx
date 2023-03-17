@@ -1,28 +1,23 @@
 import { useFormContext } from "@/utility/FormContext";
 import AddStep from "./AddStep";
-import BackButton from "./BackButton";
-import ConfirmButton from "./ConfirmButton";
+
 import InfoStep from "./InfoStep";
 import PlanStep from "./PlanStep";
 import Steps from "./Steps";
-import SubTitle from "./SubTitle";
 import SummaryStep from "./SummaryStep";
-import Title from "./Title";
+import ThankStep from "./ThankStep";
 
 function FormCard() {
-  const { a } = useFormContext();
-  console.log(a);
+  const { step } = useFormContext();
+
   return (
     <section>
       <Steps />
-      <Title />
-      <SubTitle />
-      <InfoStep />
-      <PlanStep />
-      <AddStep />
-      <SummaryStep />
-      <BackButton />
-      <ConfirmButton />
+      {step === 1 && <InfoStep />}
+      {step === 2 && <PlanStep />}
+      {step === 3 && <AddStep />}
+      {step === 4 && <SummaryStep />}
+      {step === 5 && <ThankStep />}
     </section>
   );
 }
