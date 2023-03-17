@@ -1,3 +1,4 @@
+import { useFormContext } from "@/utility/FormContext";
 import AddStep from "./AddStep";
 import BackButton from "./BackButton";
 import ConfirmButton from "./ConfirmButton";
@@ -9,6 +10,8 @@ import SummaryStep from "./SummaryStep";
 import Title from "./Title";
 
 function FormCard() {
+  const { a } = useFormContext();
+  console.log(a);
   return (
     <section>
       <Steps />
