@@ -17,6 +17,11 @@ const MultiFormProvider = ({ children }: Props) => {
   const [step, setStep] = useState(1);
   const [schedule, setSchedule] = useState(true);
   const [plan, setPlan] = useState(0);
+  const [add, setAdd] = useState({
+    service: false,
+    storage: false,
+    profile: false,
+  });
 
   return (
     <MultiFormContext.Provider
@@ -29,6 +34,8 @@ const MultiFormProvider = ({ children }: Props) => {
         setSchedule,
         plan,
         setPlan,
+        add,
+        setAdd,
       }}
     >
       {children}
