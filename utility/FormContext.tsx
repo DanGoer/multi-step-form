@@ -15,10 +15,21 @@ const MultiFormProvider = ({ children }: Props) => {
     phone: "",
   });
   const [step, setStep] = useState(1);
+  const [schedule, setSchedule] = useState(true);
+  const [plan, setPlan] = useState(0);
 
   return (
     <MultiFormContext.Provider
-      value={{ personalInfo, setPersonalInfo, step, setStep }}
+      value={{
+        personalInfo,
+        setPersonalInfo,
+        step,
+        setStep,
+        schedule,
+        setSchedule,
+        plan,
+        setPlan,
+      }}
     >
       {children}
     </MultiFormContext.Provider>
