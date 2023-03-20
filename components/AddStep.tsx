@@ -17,7 +17,7 @@ function AddStep() {
     <div>
       <ul>
         <li onClick={() => setAdd({ ...add, service: !add.service })}>
-          <input type="checkbox" />
+          <input type="checkbox" checked={add.service} />
           <span>
             <div>
               <h4>Online service</h4>
@@ -27,7 +27,7 @@ function AddStep() {
           </span>
         </li>
         <li onClick={() => setAdd({ ...add, storage: !add.storage })}>
-          <input type="checkbox" />
+          <input type="checkbox" checked={add.storage} />
           <span>
             <div>
               <h4>Larger storage</h4>
@@ -37,7 +37,7 @@ function AddStep() {
           </span>
         </li>
         <li onClick={() => setAdd({ ...add, profile: !add.profile })}>
-          <input type="checkbox" />
+          <input type="checkbox" checked={add.profile} />
           <span>
             <div>
               <h4>Customizable profile</h4>
