@@ -1,9 +1,50 @@
 import { useFormContext } from "@/utility/FormContext";
+import { useEffect, useState } from "react";
 import BackButton from "./BackButton";
 import ConfirmButton from "./ConfirmButton";
 
+interface summaryProps {
+  monthly?: string;
+  yearly?: string;
+}
+
+function summaryCalc(
+  add: { service: boolean; storage: boolean; profile: boolean },
+  plan: number
+): summaryProps {
+  const getYearly = () => {
+    let yearlyTemp = 0;
+    if (plan === 0) yearlyTemp = 90;
+    if (plan === 1) yearlyTemp = 120;
+    if (plan === 2) yearlyTemp = 150;
+    if (add.service) yearlyTemp = yearlyTemp + 10;
+    if (add.storage) yearlyTemp = yearlyTemp + 20;
+    if (add.profile) yearlyTemp = yearlyTemp + 20;
+    return yearlyTemp.toString();
+  };
+
+  const getMonthly = () => {
+    let monthlyTemp = 0;
+    if (plan === 0) monthlyTemp = 9;
+    if (plan === 1) monthlyTemp = 12;
+    if (plan === 2) monthlyTemp = 15;
+    if (add.service) monthlyTemp = monthlyTemp + 1;
+    if (add.storage) monthlyTemp = monthlyTemp + 2;
+    if (add.profile) monthlyTemp = monthlyTemp + 2;
+    return monthlyTemp.toString();
+  };
+
+  const value = { monthly: getMonthly(), yearly: getYearly() };
+  return value;
+}
+
 function SummaryStep() {
-  const { setStep, schedule, setSchedule, add } = useFormContext();
+  const [result, setResult] = useState<summaryProps>({});
+  const { setStep, schedule, setSchedule, add, plan } = useFormContext();
+
+  useEffect(() => {
+    setResult(summaryCalc(add, plan));
+  }, []);
 
   const handleNextStep = () => {
     setStep(5);
@@ -44,12 +85,12 @@ function SummaryStep() {
         {schedule ? (
           <>
             <p>Total (per month)</p>
-            <p>+$12/mo</p>
+            <p>+${result?.monthly}/mo</p>
           </>
         ) : (
           <>
             <p>Total (per year)</p>
-            <p>+$120/mo</p>
+            <p>${result?.yearly}/mo</p>
           </>
         )}
       </span>
