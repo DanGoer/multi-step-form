@@ -1,8 +1,13 @@
+import { useFormContext } from "@/utility/FormContext";
+import styles from "./Steps.module.scss";
+
 function Steps() {
+  const { step } = useFormContext();
+
   return (
-    <ul>
+    <ul className={styles.steps}>
       <li>
-        <div>1</div>
+        <div className={step === 1 ? styles.highlight : ""}>1</div>
         <div>
           <p>Step 1</p>
           <h4>Your Info</h4>

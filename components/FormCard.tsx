@@ -9,7 +9,6 @@ import ThankStep from "./ThankStep";
 
 function FormCard() {
   const { step } = useFormContext();
-  console.log(step);
 
   return (
     <section>
