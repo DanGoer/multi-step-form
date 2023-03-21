@@ -14,18 +14,21 @@
     div:nth-of-type(even) {
       display: none;
     }
-    div:nth-of-type(odd) {
-      color: hsl(0, 0%, 100%);
-      border-radius: 50%;
-      border: 1px solid hsl(0, 0%, 100%);
-      width: 30px;
-      height: 30px;
-      text-align: center;
-      padding-top: 5px;
-      font-weight: bold;
-    }
   }
 }
 
+.number {
+  color: hsl(0, 0%, 100%);
+  border-radius: 50%;
+  border: 1px solid hsl(0, 0%, 100%);
+  width: 30px;
+  height: 30px;
+  text-align: center;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
 .highlight {
+  color: hsl(213, 96%, 18%);
+  background-color: hsl(206, 94%, 87%);
 }
