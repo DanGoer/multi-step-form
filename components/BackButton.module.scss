@@ -1,0 +1,14 @@
+.back {
+  background-color: white;
+  color: hsl(231, 11%, 63%);
+  padding: 12px 0px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+
+.back:hover {
+  cursor: pointer;
+  color: hsl(213, 96%, 18%);
+}

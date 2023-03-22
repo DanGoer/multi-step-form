@@ -1,0 +1,15 @@
+.confirm {
+  background-color: hsl(213, 96%, 18%);
+  color: white;
+  padding: 12px 17px;
+  border-radius: 3px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+}
+
+.confirm:hover {
+  cursor: pointer;
+  color: white;
+  background-color: #174a8c;
+}

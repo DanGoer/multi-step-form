@@ -1,5 +1,11 @@
 .card {
-  width: 340px;
-  background-color: white;
+  background-color: hsl(217, 100%, 97%);
   border-radius: 12px;
+}
+
+.buttons-control {
+  display: flex;
+  padding: 20px 15px;
+  background-color: white;
+  justify-content: space-between;
 }

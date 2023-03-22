@@ -1,4 +1,5 @@
 import { useFormContext } from "@/utility/FormContext";
+import styles from "./ConfirmButton.module.scss";
 
 function ConfirmButton() {
   const { step, setStep } = useFormContext();
@@ -7,7 +8,7 @@ function ConfirmButton() {
   };
 
   return (
-    <button onClick={handleNextStep}>
+    <button className={styles.confirm} onClick={handleNextStep}>
       {step === 4 ? "Confirm" : "Next Step"}
     </button>
   );
