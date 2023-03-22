@@ -8,7 +8,18 @@ interface Props {
   children: React.ReactNode;
 }
 
+interface requiredI {
+  name: boolean;
+  email: boolean;
+  phone: boolean;
+}
+
 const MultiFormProvider = ({ children }: Props) => {
+  const [required, setRequired] = useState<requiredI>({
+    name: false,
+    email: false,
+    phone: false,
+  });
   const [personalInfo, setPersonalInfo] = useState({
     name: "",
     email: "",
@@ -36,6 +47,8 @@ const MultiFormProvider = ({ children }: Props) => {
         setPlan,
         add,
         setAdd,
+        required,
+        setRequired,
       }}
     >
       {children}

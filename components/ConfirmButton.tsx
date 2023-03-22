@@ -2,8 +2,23 @@ import { useFormContext } from "@/utility/FormContext";
 import styles from "./ConfirmButton.module.scss";
 
 function ConfirmButton() {
-  const { step, setStep } = useFormContext();
+  const { step, setStep, setRequired, personalInfo } = useFormContext();
+
   const handleNextStep = () => {
+    const requiredReset = { name: false, email: false, phone: false };
+
+    if (personalInfo.name === "") {
+      setRequired({ ...requiredReset, name: true });
+      return;
+    }
+    if (personalInfo.email === "") {
+      setRequired({ ...requiredReset, email: true });
+      return;
+    }
+    if (personalInfo.phone === "") {
+      setRequired({ ...requiredReset, phone: true });
+      return;
+    }
     setStep((prevStep: number) => prevStep + 1);
   };
 
