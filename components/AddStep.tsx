@@ -1,17 +1,7 @@
 import { useFormContext } from "@/utility/FormContext";
-import BackButton from "./BackButton";
-import ConfirmButton from "./ConfirmButton";
 
 function AddStep() {
-  const { setStep, schedule, add, setAdd } = useFormContext();
-
-  const handleNextStep = () => {
-    setStep(4);
-  };
-
-  const handlePreviousStep = () => {
-    setStep(2);
-  };
+  const { schedule, add, setAdd } = useFormContext();
 
   return (
     <div>
@@ -47,8 +37,6 @@ function AddStep() {
           </span>
         </li>
       </ul>
-      <BackButton handler={handlePreviousStep} />
-      <ConfirmButton handler={handleNextStep} text="Next Step" />
     </div>
   );
 }

@@ -1,9 +1,12 @@
-interface Props {
-  handler: () => void;
-}
+import { useFormContext } from "@/utility/FormContext";
 
-function BackButton({ handler }: Props) {
-  return <button onClick={handler}>Go Back</button>;
+function BackButton() {
+  const { step, setStep } = useFormContext();
+
+  const handlePreviousStep = () => {
+    setStep((prevStep: number) => prevStep - 1);
+  };
+  return <button onClick={handlePreviousStep}>Go Back</button>;
 }
 
 export default BackButton;

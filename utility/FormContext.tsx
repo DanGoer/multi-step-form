@@ -14,7 +14,7 @@ const MultiFormProvider = ({ children }: Props) => {
     email: "",
     phone: "",
   });
-  const [step, setStep] = useState(1);
+  const [step, setStep] = useState<number>(1);
   const [schedule, setSchedule] = useState(true);
   const [plan, setPlan] = useState(0);
   const [add, setAdd] = useState({

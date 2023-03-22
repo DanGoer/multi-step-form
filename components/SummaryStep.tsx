@@ -1,7 +1,5 @@
 import { useFormContext } from "@/utility/FormContext";
 import { useEffect, useState } from "react";
-import BackButton from "./BackButton";
-import ConfirmButton from "./ConfirmButton";
 
 interface summaryProps {
   monthly?: string;
@@ -40,19 +38,11 @@ function summaryCalc(
 
 function SummaryStep() {
   const [result, setResult] = useState<summaryProps>({});
-  const { setStep, schedule, setSchedule, add, plan } = useFormContext();
+  const { schedule, setSchedule, add, plan } = useFormContext();
 
   useEffect(() => {
     setResult(summaryCalc(add, plan));
   }, []);
-
-  const handleNextStep = () => {
-    setStep(5);
-  };
-
-  const handlePreviousStep = () => {
-    setStep(3);
-  };
 
   return (
     <div>
@@ -94,8 +84,6 @@ function SummaryStep() {
           </>
         )}
       </span>
-      <BackButton handler={handlePreviousStep} />
-      <ConfirmButton handler={handleNextStep} text="Next Step" />
     </div>
   );
 }
