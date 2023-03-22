@@ -15,7 +15,7 @@ function FormCard() {
   const { step } = useFormContext();
 
   return (
-    <section className={styles.card}>
+    <section className={styles["form-card"]}>
       <Steps />
       {step === 1 && <InfoStep />}
       {step === 2 && <PlanStep />}
@@ -23,7 +23,7 @@ function FormCard() {
       {step === 4 && <SummaryStep />}
       {step === 5 && <ThankStep />}
       <span className={styles["buttons-control"]}>
-        {step !== 1 && step !== 5 && <BackButton />}
+        {step !== 1 && step !== 5 ? <BackButton /> : <div></div>}
         {step !== 5 && <ConfirmButton />}
       </span>
     </section>

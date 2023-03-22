@@ -7,7 +7,7 @@ function InfoStep() {
   const { personalInfo, setPersonalInfo } = useFormContext();
 
   return (
-    <form>
+    <form className="card">
       <Title title="Personal Info" />
       <SubTitle subTitle="Please provide your name, email address, and phone number" />
       <label htmlFor="name">Name</label>
