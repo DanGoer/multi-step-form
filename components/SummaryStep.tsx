@@ -1,5 +1,8 @@
 import { useFormContext } from "@/utility/FormContext";
 import { useEffect, useState } from "react";
+import SubTitle from "./SubTitle";
+import Title from "./Title";
+import styles from "./SummaryStep.module.scss";
 
 interface summaryProps {
   monthly?: string;
@@ -45,13 +48,44 @@ function SummaryStep() {
   }, []);
 
   return (
-    <div>
-      <ul>
+    <div className="card">
+      <Title title={"Finishing up"} />
+      <SubTitle
+        subTitle={"Double-check everything looks OK before confirming."}
+      />
+      <ul className={styles.summary}>
         <li>
-          {schedule ? <h4>Arcade (Monthly)</h4> : <h4>Arcade (Yearly)</h4>}
-          <button onClick={() => setSchedule(!schedule)}>Change</button>
-          {schedule ? <p>$9/mo</p> : <p>$90/yr</p>}
+          <div>
+            {schedule ? (
+              <h4>
+                {plan === 0 && "Arcade"}
+                {plan === 1 && "Advanced"}
+                {plan === 2 && "Pro"} (Monthly)
+              </h4>
+            ) : (
+              <h4>
+                {plan === 0 && "Arcade"}
+                {plan === 1 && "Advanced"}
+                {plan === 2 && "Pro"} (Yearly)
+              </h4>
+            )}
+            <button onClick={() => setSchedule(!schedule)}>Change</button>
+          </div>
+          {schedule ? (
+            <p className={styles.sum}>
+              ${plan === 0 && "9"}
+              {plan === 1 && "12"}
+              {plan === 2 && "15"}/mo
+            </p>
+          ) : (
+            <p>
+              ${plan === 0 && "90"}
+              {plan === 1 && "120"}
+              {plan === 2 && "150"}/yr
+            </p>
+          )}
         </li>
+        <hr />
         {add.service && (
           <li>
             <p>Online Service</p>
@@ -71,7 +105,7 @@ function SummaryStep() {
           </li>
         )}
       </ul>
-      <span>
+      <span className={styles.total}>
         {schedule ? (
           <>
             <p>Total (per month)</p>

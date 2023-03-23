@@ -92,7 +92,6 @@ function AddStep() {
               className={styles.checkmark}
             ></span>
           </label>
-
           <div>
             <h4>Customizable profile</h4>
             <p>Custom theme on your profile</p>

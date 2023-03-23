@@ -1,0 +1,57 @@
+.summary {
+  border-radius: 8px;
+  background-color: hsl(231, 100%, 99%);
+
+  hr {
+  }
+
+  p {
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+    font-weight: 400;
+  }
+
+  li {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 15px;
+
+    button {
+      border: none;
+      text-decoration: underline;
+      background-color: transparent;
+      color: hsl(231, 11%, 63%);
+    }
+
+    button:hover {
+      cursor: pointer;
+    }
+
+    h4 {
+      color: hsl(213, 96%, 18%);
+    }
+  }
+}
+
+.total {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  p {
+    color: hsl(231, 11%, 63%);
+    font-size: 14px;
+    font-weight: 400;
+    margin: 22px 10px;
+    padding-left: 4px;
+  }
+
+  p:nth-of-type(2) {
+    color: hsl(243, 100%, 62%);
+  }
+}
+
+.summary .sum {
+  color: hsl(213, 96%, 18%);
+}
