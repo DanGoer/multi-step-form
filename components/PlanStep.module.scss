@@ -32,6 +32,11 @@
   }
 }
 
+.option:hover {
+  cursor: pointer;
+  border: 1px solid hsl(213, 96%, 18%);
+}
+
 .marked {
   background-color: hsl(217, 100%, 97%);
   border: 1px solid hsl(213, 96%, 18%);
@@ -48,8 +53,8 @@
   label {
     position: relative;
     display: inline-block;
-    width: 60px;
-    height: 30px;
+    width: 35px;
+    height: 20px;
   }
 
   input {
@@ -65,7 +70,7 @@
     left: 0;
     right: 0;
     bottom: 0;
-    background: #2c3e50;
+    background: hsl(213, 96%, 18%);
     transition: 0.3s;
     border-radius: 30px;
   }
@@ -73,37 +78,37 @@
   span:before {
     position: absolute;
     content: "";
-    height: 25px;
-    width: 25px;
+    height: 12px;
+    width: 12px;
     left: 3px;
-    bottom: 2.6px;
+    bottom: 4px;
     background-color: #fff;
     border-radius: 50%;
     transition: 0.3s;
   }
 
-  input:checked + span {
-    background-color: #00c853;
-  }
-
   input:checked + span:before {
-    transform: translateX(29px);
+    transform: translateX(16px);
   }
 
   strong {
     position: absolute;
     width: max-content;
-    line-height: 30px;
+    line-height: 20px;
     cursor: pointer;
   }
 }
 
 .monthly {
-  left: 100%;
-  margin-left: 10px;
+  right: 100%;
+  margin-right: 20px;
 }
 
 .yearly {
-  right: 100%;
-  margin-right: 10px;
+  left: 100%;
+  margin-left: 20px;
+}
+
+.active {
+  color: hsl(231, 11%, 63%);
 }

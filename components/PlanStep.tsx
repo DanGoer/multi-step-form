@@ -15,7 +15,7 @@ function PlanStep() {
       />
       <ul>
         <li
-          className={`${styles.option} ${plan === 1 && styles.marked}`}
+          className={`${styles.option} ${plan === 0 && styles.marked}`}
           onClick={() => setPlan(0)}
         >
           <Image
@@ -36,7 +36,10 @@ function PlanStep() {
             )}
           </div>
         </li>
-        <li className={styles.option} onClick={() => setPlan(1)}>
+        <li
+          className={`${styles.option} ${plan === 1 && styles.marked}`}
+          onClick={() => setPlan(1)}
+        >
           <Image
             src="icon-advanced.svg"
             alt="Arcade option logo"
@@ -55,7 +58,10 @@ function PlanStep() {
             )}
           </div>
         </li>
-        <li className={styles.option} onClick={() => setPlan(2)}>
+        <li
+          className={`${styles.option} ${plan === 2 && styles.marked}`}
+          onClick={() => setPlan(2)}
+        >
           <Image
             src="icon-pro.svg"
             alt="Arcade option logo"
@@ -77,15 +83,19 @@ function PlanStep() {
       </ul>
       <div className={styles.switch}>
         <label>
-          <strong className={styles.monthly}>Monthly</strong>
+          <strong className={`${styles.monthly} ${!schedule && styles.active}`}>
+            Monthly
+          </strong>
           <input
             onClick={() => setSchedule(!schedule)}
-            defaultChecked={schedule}
+            defaultChecked={!schedule}
             type="checkbox"
             name="switch schedule"
           />
           <span />
-          <strong className={styles.yearly}>Yearly</strong>
+          <strong className={`${styles.yearly} ${schedule && styles.active}`}>
+            Yearly
+          </strong>
         </label>
       </div>
     </div>
