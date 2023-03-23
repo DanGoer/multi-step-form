@@ -13,6 +13,11 @@ interface requiredI {
   email: boolean;
   phone: boolean;
 }
+interface addI {
+  service: boolean;
+  storage: boolean;
+  profile: boolean;
+}
 
 const MultiFormProvider = ({ children }: Props) => {
   const [required, setRequired] = useState<requiredI>({
@@ -28,7 +33,7 @@ const MultiFormProvider = ({ children }: Props) => {
   const [step, setStep] = useState<number>(1);
   const [schedule, setSchedule] = useState(true);
   const [plan, setPlan] = useState(0);
-  const [add, setAdd] = useState({
+  const [add, setAdd] = useState<addI>({
     service: false,
     storage: false,
     profile: false,
