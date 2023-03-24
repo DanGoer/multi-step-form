@@ -38,6 +38,7 @@
     background-image: url(../public/bg-sidebar-desktop.svg);
     flex-direction: column;
     justify-content: flex-start;
+    grid-area: steps;
 
     div {
       margin-right: 20px;

@@ -35,3 +35,10 @@ a {
   top: 100px;
   left: 15px;
 }
+
+@media (min-width: 700px) {
+  .card {
+    position: static;
+    grid-area: card;
+  }
+}

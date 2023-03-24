@@ -11,6 +11,18 @@
     margin-top: 150px;
     height: 70vh;
     padding: 10px;
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1.6fr 0.4fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "steps card card card"
+      "steps card card card"
+      "steps buttons buttons buttons";
+  }
+  .buttons-control {
+    grid-area: buttons;
   }
 }
 
