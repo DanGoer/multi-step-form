@@ -32,3 +32,35 @@
   color: hsl(213, 96%, 18%);
   background-color: hsl(206, 94%, 87%);
 }
+
+@media (min-width: 700px) {
+  .steps {
+    background-image: url(../public/bg-sidebar-desktop.svg);
+    flex-direction: column;
+    justify-content: flex-start;
+
+    div {
+      margin-right: 20px;
+    }
+
+    li {
+      display: flex;
+      flex-direction: row;
+      padding: 0px 40px;
+      div:nth-of-type(even) {
+        display: block;
+      }
+      p {
+        color: hsl(229, 24%, 87%);
+        font-size: 14px;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+      h4 {
+        color: white;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+      }
+    }
+  }
+}
