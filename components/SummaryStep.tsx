@@ -78,7 +78,7 @@ function SummaryStep() {
               {plan === 2 && "15"}/mo
             </p>
           ) : (
-            <p>
+            <p className={styles.sum}>
               ${plan === 0 && "90"}
               {plan === 1 && "120"}
               {plan === 2 && "150"}/yr

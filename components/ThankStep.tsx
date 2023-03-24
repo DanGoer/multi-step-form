@@ -1,5 +1,6 @@
 import SubTitle from "./SubTitle";
 import Title from "./Title";
+import styles from "./ThankStep.module.scss";
 
 function ThankStep() {
   return (
