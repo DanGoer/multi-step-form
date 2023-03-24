@@ -16,7 +16,7 @@ function AddStep() {
     <div className="card">
       <Title title={"Pick add-ons"} />
       <SubTitle subTitle={"Add-ons help enhance your gaming experience."} />
-      <ul>
+      <ul className={styles.picks}>
         <li
           className={`${styles.add} ${add.service && styles.checkadd}`}
           onClick={() =>

@@ -92,3 +92,27 @@
 .add:hover {
   cursor: pointer;
 }
+
+@media (min-width: 700px) {
+  .picks {
+    margin-top: 40px;
+  }
+
+  .add {
+    padding: 15px 15px;
+    margin: 10px 0px;
+    width: 100%;
+
+    h4 {
+      color: hsl(213, 96%, 18%);
+      margin-bottom: 5px;
+    }
+    div {
+      margin-left: 35px;
+    }
+
+    p {
+      margin-left: auto;
+    }
+  }
+}
