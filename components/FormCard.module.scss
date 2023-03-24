@@ -5,11 +5,19 @@
   height: 90vh;
 }
 
+.buttons-control {
+  display: flex;
+  padding: 20px 15px;
+  background-color: white;
+  justify-content: space-between;
+}
+
 @media (min-width: 700px) {
   .form-card {
     background-color: white;
     margin-top: 150px;
-    height: 70vh;
+    max-width: 900px;
+    height: 590px;
     padding: 10px;
     position: static;
     display: grid;
@@ -21,14 +29,9 @@
       "steps card card card"
       "steps buttons buttons buttons";
   }
+
   .buttons-control {
     grid-area: buttons;
+    padding-right: 90px;
   }
-}
-
-.buttons-control {
-  display: flex;
-  padding: 20px 15px;
-  background-color: white;
-  justify-content: space-between;
 }
