@@ -48,7 +48,7 @@ function Steps() {
       <li>
         <div
           className={
-            step === 4 ? `${styles.number} ${styles.highlight}` : styles.number
+            step >= 4 ? `${styles.number} ${styles.highlight}` : styles.number
           }
         >
           4
