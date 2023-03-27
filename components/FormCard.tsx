@@ -22,10 +22,12 @@ function FormCard() {
       {step === 3 && <AddStep />}
       {step === 4 && <SummaryStep />}
       {step === 5 && <ThankStep />}
-      <span className={styles["buttons-control"]}>
-        {step !== 1 && step !== 5 ? <BackButton /> : <div></div>}
-        {step !== 5 && <ConfirmButton />}
-      </span>
+      {step !== 5 && (
+        <span className={styles["buttons-control"]}>
+          {step !== 1 ? <BackButton /> : <div></div>}
+          <ConfirmButton />
+        </span>
+      )}
     </section>
   );
 }

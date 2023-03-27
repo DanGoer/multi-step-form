@@ -89,19 +89,19 @@ function SummaryStep() {
         {add.service && (
           <li>
             <p>Online Service</p>
-            {schedule ? <p>$1/mo</p> : <p>$10/yr</p>}
+            {schedule ? <p>+$1/mo</p> : <p>+$10/yr</p>}
           </li>
         )}
         {add.storage && (
           <li>
             <p>Larger Storage</p>
-            {schedule ? <p>$2/mo</p> : <p>$20/yr</p>}
+            {schedule ? <p>+$2/mo</p> : <p>+$20/yr</p>}
           </li>
         )}
         {add.profile && (
           <li>
             <p>Customizable Profile</p>
-            {schedule ? <p>$2/mo</p> : <p>$20/yr</p>}
+            {schedule ? <p>+$2/mo</p> : <p>+$20/yr</p>}
           </li>
         )}
       </ul>
@@ -114,7 +114,7 @@ function SummaryStep() {
         ) : (
           <>
             <p>Total (per year)</p>
-            <p>${result?.yearly}/mo</p>
+            <p>+${result?.yearly}/mo</p>
           </>
         )}
       </span>
